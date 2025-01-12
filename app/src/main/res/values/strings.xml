@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ApiContact</string>
+    <string name="btn_create">Crear contactos</string>
+</resources>
