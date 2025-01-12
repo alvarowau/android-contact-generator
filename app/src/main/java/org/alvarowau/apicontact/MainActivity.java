@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
                 this::onPermisosResult
         );
         initPermissions();
-        api = new ContactApi(MainActivity.this, getContentResolver());
+        api = new ContactApi(MainActivity.this, getContentResolver(),10);
 
         // Configurar el botón de generar contactos
         binding.buttonGenerate.setOnClickListener(view -> {
@@ -70,10 +70,16 @@ public class MainActivity extends AppCompatActivity {
      * @param numero El número de contactos que se generarán.
      */
     private void generarContacts(int numero) {
+        // Establecer el número de contactos que se deben generar
+        api.setNumeroContactos(numero);
+
+        // Mostrar ProgressBar mientras se generan los contactos
+        binding.progressBar.setVisibility(View.VISIBLE);
+
         // Crear un nuevo hilo para evitar bloquear el hilo principal
         new Thread(() -> {
-            // Generar los contactos
-            api.obtenerContactosSiNoHay(numero);
+            // Llamar a run() de ContactApi, que manejará la creación de contactos
+            api.start();
 
             // Después de generar los contactos, volver al hilo principal
             runOnUiThread(() -> {

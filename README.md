@@ -1,4 +1,3 @@
-
 # API Contact - Android Application
 
 Esta aplicación permite generar contactos de manera dinámica en un dispositivo Android, solicitando permisos necesarios como el acceso y modificación de contactos y almacenamiento externo.
@@ -12,6 +11,8 @@ Esta aplicación permite generar contactos de manera dinámica en un dispositivo
 ## Importante
 
 - La aplicación puede tardar un poco en generar los contactos debido a que la API utilizada provee nombres que pueden contener caracteres especiales. Estos nombres serán descartados por la aplicación, por lo que no todos los nombres proporcionados por la API serán visibles en la interfaz.
+- Se ha mejorado significativamente la velocidad de generación de contactos, y ahora se pueden generar hasta 80 contactos en menos de 2 segundos.
+- Sin embargo, después de generar los contactos una vez, al intentar generar más contactos se produce un cierre inesperado de la aplicación. Al volver a abrirla, la primera vez funciona correctamente. Este problema será corregido en una futura actualización.
 
 ## Permisos Requeridos
 
@@ -41,4 +42,3 @@ La aplicación solicita los siguientes permisos para funcionar correctamente:
 ## Colaboraciones
 
 Si tienes alguna pregunta, sugerencia o deseas colaborar en el proyecto, no dudes en contactarme a través de mi correo: alvarobajo893@gmail.com.
-
